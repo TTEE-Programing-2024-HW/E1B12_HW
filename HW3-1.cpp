@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <time.h>
+#include<time.h>
 int main(){
 	printf("||(?ˋ口ˊ)?????       ||(??_?)||       ?????('口 '?)||\n");
 	printf("||(?ˋ口ˊ)?????       ||(??_?)||       ?????('口 '?)||\n");
@@ -57,6 +57,58 @@ int main(){
     printf(" ------------------------------------- \n");
 	printf("請輸入選項: ");
 	printf("\n ");
+	
+	
+	char e;
+    while(1){
+        //dm();
+        //printf("輸入選項:");
+        scanf("%s", &e);
+
+        switch (e) {
+        	
+        	
+            case 'a':
+                char ch;
+                scanf("%c", &ch);
+                
+                
+            //    tr(ch);
+                break;
+                
+            case 'b':
+                int n;
+                printf("請輸入需要幾個座位(1~4): ");
+                scanf("%d", &n);
+            //    mult(n);
+                break;
+                
+            case 'c':
+                
+                break;
+                
+                
+            case 'd':
+                char yn;
+                printf("Continue? (y/n): ");
+                scanf(" %c", &yn);
+                if (yn == 'n' || yn == 'N') {
+                    printf("結束程式\n");
+                    return 0;
+                } else if (yn != 'y' && yn != 'Y') {
+                    printf("錯誤重新輸入\n");
+                }
+                break;
+                
+                
+            default:
+                printf("錯誤重新輸入\n");
+            	
+        }
+    }
+	
+	
+	
 	
 	int a=9,b=9;
 	char seats[a][b];
