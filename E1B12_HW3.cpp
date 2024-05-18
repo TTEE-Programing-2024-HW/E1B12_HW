@@ -104,10 +104,61 @@ int main(){
                 break;
                 
 			case 'b':
-                int n;
-                printf("請輸入需要幾個座位(1~4): ");
+                int n,choice;
+                printf("需要幾個座位(1~4): ");
                 scanf("%d", &n);
-            //    mult(n);
+                
+                
+                if (n < 1 || n > 4) {
+                    printf("無效的數量，請重新輸入。\n");
+                }
+				
+				
+				else {
+                    
+				    int found = 0;
+				    while (!found) {
+				        int row = rand() % a;
+				        int col = rand() % (b - n + 1);
+				
+				        if (n <= 3) {
+				            
+				        }
+						
+						else{
+							
+				                
+				        }
+				        
+				        }
+				    }
+                    
+                    
+                    
+                    printf("是否滿意座位安排 (y/n)？");
+                    scanf(" %c", &choice);
+                    
+                    
+                    if (choice == 'y' || choice == 'Y') {		//22222
+                    	
+                    	
+                    	
+                    	
+                        printf("預訂成功！\n");
+                    }
+					else {									//33333
+                    	
+                        
+                        
+                        printf("預訂失敗!\n");
+                    }
+                }
+                
+                system("PAUSE");
+                system("CLS");
+                
+                
+                
                 break;
                 
             case 'c':
