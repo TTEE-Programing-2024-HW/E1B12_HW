@@ -1,6 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+void dm() {
+	printf(" ----------[Booking System]----------- \n");
+    printf(" | a. Available seats                |\n");
+    printf(" | b. Arrange for you                |\n");
+    printf(" | c. Choose by yourself             |\n");
+    printf(" | d. Exit                           |\n");
+    printf(" ------------------------------------- \n");
+	printf("請輸入選項: ");
+	printf("\n ");
+}
+
+
+
 int main(){
 	printf("||(?ˋ口ˊ)?????       ||(??_?)||       ?????('口 '?)||\n");
 	printf("||(?ˋ口ˊ)?????       ||(??_?)||       ?????('口 '?)||\n");
@@ -49,34 +62,48 @@ int main(){
 	}
 	system("CLS");	// 清除螢幕
 	
-	printf(" ----------[Booking System]----------- \n");
-    printf(" | a. Available seats                |\n");
-    printf(" | b. Arrange for you                |\n");
-    printf(" | c. Choose by yourself             |\n");
-    printf(" | d. Exit                           |\n");
-    printf(" ------------------------------------- \n");
-	printf("請輸入選項: ");
-	printf("\n ");
+	int a=9,b=9;
+	char seats[a][b];
+	for (int i = 0; i <a; i++) {
+        for (int j = 0; j <b; j++) {
+            seats[i][j] = '-';
+        }
+    }
+	//int a=(rand() % (最大值-最小值+1) ) + 最小值
+	int book= 0;
+    srand(time(NULL));
+    while (book < 10) {
+        int row = rand() % a;
+        int col = rand() % b;
+        if (seats[row][col] == '-') {
+            seats[row][col] = '*';
+            book++;
+        }
+    }
+
 	
 	
 	char e;
     while(1){
-        //dm();
-        //printf("輸入選項:");
-        scanf("%s", &e);
-
+        dm();
+        scanf("%s",&e);
         switch (e) {
-        	
-        	
             case 'a':
                 char ch;
-                scanf("%c", &ch);
-                
-                
-            //    tr(ch);
+				printf("\\123456789\n");
+				for (int i = 0; i < a; i++){
+					printf("%d ", 9 - i);
+   				    for (int j= 0; j < b; j++) {
+   				    	printf("%c", seats[i][j]);
+   				    	}
+   				    	printf("\n");
+					}
+				system("PAUSE");
+				system("CLS");
+				
                 break;
                 
-            case 'b':
+			case 'b':
                 int n;
                 printf("請輸入需要幾個座位(1~4): ");
                 scanf("%d", &n);
@@ -103,41 +130,12 @@ int main(){
                 
             default:
                 printf("錯誤重新輸入\n");
-            	
         }
     }
 	
 	
 	
 	
-	int a=9,b=9;
-	char seats[a][b];
-	
-	
-	for (int i = 0; i <a; i++) {
-        for (int j = 0; j <b; j++) {
-            seats[i][j] = '-';
-        }
-    }
-	
-    int book= 0;
-    srand(time(NULL));
-    while (book < 10) {
-        int row = rand() % a;
-        int col = rand() % b;
-        if (seats[row][col] == '-') {
-            seats[row][col] = '*';
-            book++;
-        }
-    }
-	printf("\\123456789\n");
-    for (int i = 0; i < a; i++) {
-        printf("%d ", 9 - i);
-        for (int j= 0; j < b; j++) {
-            printf("%c", seats[i][j]);
-        }
-        printf("\n");
-    }
 	
 	
 	return 0;
