@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<string.h>
 void dm() {
 	printf(" ----------[Booking System]----------- \n");
     printf(" | a. Available seats                | \n");
@@ -200,6 +201,27 @@ int main(){
                 break;
                 
             case 'c':
+            	printf("輸入座位選擇，例如1-2(代表列1,行2)\n");
+                char own[5];
+                while(1){
+                	scanf("%s",&own);
+                	if('1'<=own[0]&&own[0]<='9'){
+                		if(own[0]=='-'){
+                			if('1'<=own[0]&&own[0]<='9'){
+                				
+                				
+                				
+							}
+						}
+					}
+                	
+                	
+                	printf("%s\n",own);
+                	printf("%c\n",own[0]);
+                	printf("%c\n",own[1]);
+                	printf("%c\n",own[2]);
+					printf("%c\n",own[3]);
+				}
                 
                 
                 
@@ -220,7 +242,7 @@ int main(){
                 
                 
             default:
-                printf("錯誤重新輸入\n");
+                printf("錯誤重新輸入\n");				//E1B12_HW3.c
             	
         }
     }
