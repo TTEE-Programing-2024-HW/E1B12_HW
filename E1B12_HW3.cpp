@@ -3,10 +3,10 @@
 #include<time.h>
 void dm() {
 	printf(" ----------[Booking System]----------- \n");
-    printf(" | a. Available seats                |\n");
-    printf(" | b. Arrange for you                |\n");
-    printf(" | c. Choose by yourself             |\n");
-    printf(" | d. Exit                           |\n");
+    printf(" | a. Available seats                | \n");
+    printf(" | b. Arrange for you                | \n");
+    printf(" | c. Choose by yourself             | \n");
+    printf(" | d. Exit                           | \n");
     printf(" ------------------------------------- \n");
 	printf("請輸入選項: ");
 	printf("\n ");
@@ -62,7 +62,7 @@ int main(){
 	}
 	system("CLS");	// 清除螢幕
 	
-	int a=9,b=9;
+	int a=9,b=9;			//a列,b行 
 	char seats[a][b];
 	for (int i = 0; i <a; i++) {
         for (int j = 0; j <b; j++) {
@@ -104,64 +104,104 @@ int main(){
                 break;
                 
 			case 'b':
-                int n,choice;
+                int n;
                 printf("需要幾個座位(1~4): ");
                 scanf("%d", &n);
-                
-                
                 if (n < 1 || n > 4) {
-                    printf("無效的數量，請重新輸入。\n");
+                    printf("無效的數字，返回主選單。\n");
+                    system("PAUSE");
                 }
-				
-				
-				else {
-                    
-				    int found = 0;
-				    while (!found) {
-				        int row = rand() % a;
-				        int col = rand() % (b - n + 1);
-				
-				        if (n <= 3) {
-				            
-				        }
-						
-						else{
-							
-				                
-				        }
-				        
-				        }
-				    }
-                    
-                    
-                    
-                    printf("是否滿意座位安排 (y/n)？");
-                    scanf(" %c", &choice);
-                    
-                    
-                    if (choice == 'y' || choice == 'Y') {		//22222
-                    	
-                    	
-                    	
-                    	
-                        printf("預訂成功！\n");
+                else{
+                int found = 0;
+                while (found==0) {
+                    int row = rand() % a;
+                    int col = rand() % (b - n + 1);
+
+                    if (n <= 3) {
+                        int ok = 1;
+                        for (int i = 0; i < n; i++) {
+                            if (seats[row][col + i] != '-') {
+                                ok = 0;
+                                break;
+                            }
+                        }
+                        if (ok==1) {
+                            for (int i = 0; i < n; i++) {
+                                seats[row][col + i] = '@';
+                            }
+                            found = 1;
+                        }
                     }
-					else {									//33333
-                    	
-                        
-                        
-                        printf("預訂失敗!\n");
+                    
+					else if (n == 4) {
+                        int ok = 1;
+                        for (int i = 0; i < n; i++) {
+                            if (seats[row][col + i] != '-') {
+                                ok = 0;
+                                break;
+                            }
+                        }
+                        if (ok==1) {
+                            for (int i = 0; i < n; i++) {
+                                seats[row][col + i] = '@';
+                            }
+                            found = 1;
+                        } else {
+                        	
+							int row2 = (row + 1) % a;
+                            int col2 = rand() % (b - 1);
+                            if (seats[row][col] == '-' && seats[row][col + 1] == '-' && seats[row+1][col] == '-' && seats[row+1][col2 + 1] == '-') {
+                                seats[row][col] = '@';
+                                seats[row][col + 1] = '@';
+                                seats[row+1][col] = '@';
+                                seats[row+1][col + 1] = '@';
+                                found = 1;
+                            }
+                        }
                     }
                 }
                 
+                printf("  123456789\n");
+                for (int i = 0; i < a; i++) {
+                    printf("%d ", 9 - i);
+                    for (int j = 0; j < b; j++) {
+                        printf("%c", seats[i][j]);
+                    }
+                    printf("\n");
+                }
+				char choose;
+                printf("是否滿意座位安排 (y/n)？");
+                
+                scanf(" %c", &choose);
+                if (choose == 'y' || choose == 'Y') {
+                    for (int i = 0; i < a; i++) {
+                        for (int j = 0; j < b; j++) {
+                            if (seats[i][j] == '@') {
+                                seats[i][j] = '*';
+                            }
+                        }
+                    }
+                    printf("預訂成功\n");
+                }
+				else {
+                    for (int i = 0; i < a; i++) {
+                        for (int j = 0; j < b; j++) {
+                            if (seats[i][j] == '@') {
+                                seats[i][j] = '-';
+                            }
+                        }
+                    }
+                    printf("預訂失敗\n\n");
+                }
                 system("PAUSE");
                 system("CLS");
-                
-                
-                
+            	}
+            	
                 break;
                 
             case 'c':
+                
+                
                 
                 break;
                 
