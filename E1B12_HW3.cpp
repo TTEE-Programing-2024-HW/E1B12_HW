@@ -76,7 +76,7 @@ int main(){
     while (book < 10) {
         int row = rand() % a;
         int col = rand() % b;
-        if (seats[row][col] == '-') {				//E1B12_HW3.c
+        if (seats[row][col] == '-') {
             seats[row][col] = '*';
             book++;
         }
@@ -91,7 +91,7 @@ int main(){
         switch (e) {
             case 'a':
                 char ch;
-				printf("\\123456789\n");
+				printf(" \\123456789\n");
 				for (int i = 0; i < a; i++){
 					printf("%d ", 9 - i);
    				    for (int j= 0; j < b; j++) {
@@ -201,26 +201,63 @@ int main(){
                 break;
                 
             case 'c':
-            	printf("輸入座位選擇，例如1-2(代表列1,行2)\n");
                 char own[5];
                 while(1){
+                	printf("輸入座位選擇，例如1-2(代表列1,行2)，注意不要空格，輸入q返回主選單:\n");
+                	char a1,b1;
                 	scanf("%s",&own);
-                	if('1'<=own[0]&&own[0]<='9'){
-                		if(own[0]=='-'){
-                			if('1'<=own[0]&&own[0]<='9'){
+                	if(own[0]=='q'){
+                		system("CLS");
+                		break;
+					}
+                	if('1'<=own[0] && own[0]<='9'){
+                		a1=own[0]-'0';
+                		
+                		if(own[1]=='-'){
+                			
+                			if('1'<=own[2]&&own[2]<='9'){
+                				b1=own[2]-'0';
+                				if(seats[9-a1][b1-1]=='-'){
+                					seats[9-a1][b1-1]='@';
+                					printf(" \\123456789\n");
+									for (int i = 0; i < a; i++){
+										printf("%d ", 9 - i);
+					   				    for (int j= 0; j < b; j++) {
+					   				    	printf("%c", seats[i][j]);
+					   				    	}
+					   				    	printf("\n");
+									}
+									seats[9-a1][b1-1]='*';
+									
+									printf("訂位成功\");
+									printf("\n");
+								}
+								else{
+									printf("輸入錯誤(格式錯誤或重位)\n");
+                					system("PAUSE");
+                					
+                					
+								}
                 				
-                				
+							}
+							else{
+								printf("輸入錯誤(格式錯誤或重位)\n");
+                				system("PAUSE");
                 				
 							}
 						}
+						else{
+							printf("輸入錯誤(格式錯誤或重位)\n");
+                			system("PAUSE");
+                			
+						}
 					}
-                	
-                	
-                	printf("%s\n",own);
-                	printf("%c\n",own[0]);
-                	printf("%c\n",own[1]);
-                	printf("%c\n",own[2]);
-					printf("%c\n",own[3]);
+                	else{
+                		printf("輸入錯誤(格式錯誤或重位)\n");
+                		system("PAUSE");
+                		system("CLS");
+                		break;
+					}
 				}
                 
                 
@@ -247,11 +284,15 @@ int main(){
         }
     }
 	
-	
-	
-	
-	
-	
-	
 	return 0;
 }
+
+
+
+
+		/*	這次的程式作業比以往的還要麻煩許多，在編寫程式的
+			過程有時候一不小心就會產生許多莫名其妙的bug，尤其
+			是隨著程式越來越長，bug就愈加不容易找出，在最後以
+			為選項c能夠輕易寫出，寫完看來是我低估了它，雖然比
+			起b還容易得多，最後我覺得最後一次作業可以出得更簡
+		  	單一點。											*/ 
