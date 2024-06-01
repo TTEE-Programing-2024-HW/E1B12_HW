@@ -84,31 +84,33 @@ int main() {
     system("CLS");
     
     
-    
-    char choice;
-    menu();
-    scanf(" %c", &choice);
-	
-    switch (choice) {
-        case 'a':
-            //a();
-            
-            break;
-        case 'b':
-            //b();
-            break;
-        case 'c':
-            //c();
-            break;
-        case 'd':
-            //d();
-            break;
-        case 'e':
-        	
-            break;
-        default:
-            printf("錯誤輸入選項，請重新輸入。\n");
-    }
+    while(1){
+    	char choice;
+	    menu();
+	    scanf(" %c", &choice);
+		
+	    switch (choice) {		//E1B12_HW4.cpp
+	        case 'a':
+	            //a();
+	            
+	            break;
+	        case 'b':
+	            //b();
+	            break;
+	        case 'c':
+	            //c();
+	            break;
+	        case 'd':
+	            //d();
+	            break;
+	        case 'e':
+	        	
+	            break;
+	        default:
+	            printf("錯誤輸入選項，請重新輸入。\n");
+	    }
+	}
+	    
     
     
     return 0;
