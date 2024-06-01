@@ -12,7 +12,6 @@ struct people{
     float average;
 };
 people students[10];
-
 int studentCount=0;
 void menu();
 void a();
@@ -97,7 +96,6 @@ void c(){
 	
 	char searchName[50];
     int found = 0;
-    
     printf("輸入想要搜尋的學生名子: ");
     scanf("%s", searchName);
 
@@ -115,6 +113,7 @@ void c(){
     system("PAUSE");
     system("CLS");
 }
+
 void d(){
 	printf("依平均成績的高低順序:\n");
 	for (int i = 0; i < studentCount - 1; i++) {
@@ -134,10 +133,7 @@ void d(){
 
     system("PAUSE");
     system("CLS");
-	
-	
 }
-
 
 int main() {
 	printf("||(?ˋ口ˊ)?????       ||O ▽ O)||       ?????('口 '?)||\n");
@@ -167,7 +163,6 @@ int main() {
 	system("PAUSE");	// 螢幕畫面暫停，並等待使用者按任意鍵。
 	system("CLS");		// clear
 	
-	
 	char password[10];
     int key=1;
     while (1) {
@@ -189,13 +184,12 @@ int main() {
     }
     system("CLS");
     
-    
     while(1){
     	char choice;
 	    menu();
 	    scanf(" %c", &choice);
 		
-	    switch (choice) {		//E1B12_HW4.cpp
+	    switch (choice) {
 	        case 'a':
 	        	system("CLS");
 	            a();
@@ -235,9 +229,6 @@ int main() {
 	            printf("錯誤輸入選項，請重新輸入。\n");
 	    }
 	}
-	    
-    
-    
     return 0;
 }
 
