@@ -19,6 +19,19 @@ void b();
 void c();
 void d();			//E1B12_HW4.cpp
 
+void menu(){
+	
+	printf("------------[Grade System]----------\n");
+    printf("| a. Enter student grades          |\n");
+    printf("| b. Display student grades        |\n");
+    printf("| c. Search for student grades     |\n");
+    printf("| d. Grade ranking                 |\n");
+    printf("| e. Exit system                   |\n");
+    printf("------------------------------------\n");
+    printf("請輸入選項:");
+	
+}
+
 
 int main() {
 	printf("||(?ˋ口ˊ)?????       ||O ▽ O)||       ?????('口 '?)||\n");
@@ -73,29 +86,22 @@ int main() {
     
     
     char choice;
-    printf("------------[Grade System]----------\n");
-    printf("| a. Enter student grades          |\n");
-    printf("| b. Display student grades        |\n");
-    printf("| c. Search for student grades     |\n");
-    printf("| d. Grade ranking                 |\n");
-    printf("| e. Exit system                   |\n");
-    printf("------------------------------------\n");
-    printf("請輸入選項:");
+    menu();
     scanf(" %c", &choice);
 	
     switch (choice) {
         case 'a':
-            a();
+            //a();
             
             break;
         case 'b':
-            b();
+            //b();
             break;
         case 'c':
-            c();
+            //c();
             break;
         case 'd':
-            d();
+            //d();
             break;
         case 'e':
         	
