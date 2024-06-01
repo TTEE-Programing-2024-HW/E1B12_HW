@@ -68,9 +68,41 @@ int main() {
         	return 0;
 		}
     }
-
+    system("CLS");
     
     
+    
+    char choice;
+    printf("------------[Grade System]----------\n");
+    printf("| a. Enter student grades          |\n");
+    printf("| b. Display student grades        |\n");
+    printf("| c. Search for student grades     |\n");
+    printf("| d. Grade ranking                 |\n");
+    printf("| e. Exit system                   |\n");
+    printf("------------------------------------\n");
+    printf("請輸入選項:");
+    scanf(" %c", &choice);
+	
+    switch (choice) {
+        case 'a':
+            a();
+            
+            break;
+        case 'b':
+            b();
+            break;
+        case 'c':
+            c();
+            break;
+        case 'd':
+            d();
+            break;
+        case 'e':
+        	
+            break;
+        default:
+            printf("錯誤輸入選項，請重新輸入。\n");
+    }
     
     
     return 0;
