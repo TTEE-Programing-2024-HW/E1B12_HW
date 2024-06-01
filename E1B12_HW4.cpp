@@ -2,6 +2,24 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+
+struct people{
+    char name[50];
+    int id;
+    int math;
+    int physics;
+    int english;
+    float average;
+};
+people students[10];
+
+void menu();
+void a();
+void b();
+void c();
+void d();			//E1B12_HW4.cpp
+
+
 int main() {
 	printf("||(?ˋ口ˊ)?????       ||O ▽ O)||       ?????('口 '?)||\n");
 	printf("||(?ˋ口ˊ)?????       ||O ▽ O)||       ?????('口 '?)||\n");
@@ -30,5 +48,12 @@ int main() {
 	system("PAUSE");	// 螢幕畫面暫停，並等待使用者按任意鍵。
 	system("CLS");		// clear
 	
+	
+	
     return 0;
 }
+
+
+
+
+	
