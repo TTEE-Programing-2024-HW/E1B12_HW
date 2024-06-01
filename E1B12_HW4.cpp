@@ -105,6 +105,23 @@ int main() {
 	            break;
 	        case 'e':
 	        	
+	        	char choice;
+				while(1){
+					printf("確定離開? (y/n): ");
+					scanf(" %c", &choice);
+					
+					if (choice == 'y' || choice == 'Y') {
+				        printf("Exiting system. Goodbye!\n");
+				        return 0;
+				    }
+				    if (choice == 'n' || choice == 'n') {
+				        printf("回主選單。\n");
+				        system("PAUSE");
+	                	system("CLS");
+	                	break;
+				    }
+				}
+				
 	            break;
 	        default:
 	            printf("錯誤輸入選項，請重新輸入。\n");
