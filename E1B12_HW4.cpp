@@ -18,7 +18,7 @@ void menu();
 void a();
 void b();
 void c();
-void d();			//E1B12_HW4.cpp
+void d();
 
 void menu(){
 	
@@ -115,8 +115,28 @@ void c(){
     system("PAUSE");
     system("CLS");
 }
+void d(){
+	printf("依平均成績的高低順序:\n");
+	for (int i = 0; i < studentCount - 1; i++) {
+        for (int j = 0; j < studentCount - i - 1; j++) {
+            if (students[j].average < students[j + 1].average) {
+                people temp = students[j];
+                students[j] = students[j + 1];
+                students[j + 1] = temp;
+            }
+        }
+    }
 
+    for (int i = 0; i < studentCount; i++) {
+        printf("Name: %s, ID: %d, 平均: %.1f\n",
+               students[i].name, students[i].id, students[i].average);
+    }
 
+    system("PAUSE");
+    system("CLS");
+	
+	
+}
 
 
 int main() {
@@ -190,7 +210,7 @@ int main() {
 	            break;
 	        case 'd':
 	        	system("CLS");
-	            //d();
+	            d();
 	            break;
 	        case 'e':
 	        	char choice;
