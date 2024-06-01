@@ -49,7 +49,30 @@ int main() {
 	system("CLS");		// clear
 	
 	
-	
+	char password[10];
+    int key=1;
+    while (1) {
+        printf("½Ð¿é¤J4­Ó¼Æ¦rªº±K½X: ");
+        scanf("%s",password);
+
+        if (strcmp(password, "2024") == 0) {
+            printf("Welcome!\n");
+            break;
+        }
+		else if(key<3){
+            printf("¿ù»~±K½X\n");
+            key++;
+        }
+        else{
+        	printf("±K½X¿ù»~¡A¶W¹L¿é¤J¤W­­!\n");
+        	return 0;
+		}
+    }
+
+    
+    
+    
+    
     return 0;
 }
 
