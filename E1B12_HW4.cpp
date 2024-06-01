@@ -93,6 +93,32 @@ void b(){
     system("CLS");
 }
 
+void c(){
+	
+	char searchName[50];
+    int found = 0;
+    
+    printf("輸入想要搜尋的學生名子: ");
+    scanf("%s", searchName);
+
+    for (int i = 0; i < studentCount; i++) {
+        if (strcmp(students[i].name, searchName) == 0) {
+            printf("名子: %s, ID: %d, 數學: %d, 物理: %d, 英文: %d, 平均分數: %.1f\n",students[i].name, students[i].id, students[i].math, students[i].physics,students[i].english, students[i].average);
+            found = 1;
+        }
+    }
+    
+    if (found==0) {
+        printf("無此學生。\n");
+    }
+    
+    system("PAUSE");
+    system("CLS");
+}
+
+
+
+
 int main() {
 	printf("||(?ˋ口ˊ)?????       ||O ▽ O)||       ?????('口 '?)||\n");
 	printf("||(?ˋ口ˊ)?????       ||O ▽ O)||       ?????('口 '?)||\n");
@@ -160,7 +186,7 @@ int main() {
 	            break;
 	        case 'c':
 	        	system("CLS");
-	            //c();
+	            c();
 	            break;
 	        case 'd':
 	        	system("CLS");
