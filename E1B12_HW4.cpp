@@ -13,6 +13,7 @@ struct people{
 };
 people students[10];
 
+int studentCount=0;
 void menu();
 void a();
 void b();
@@ -31,7 +32,66 @@ void menu(){
     printf("請輸入選項:");
 	
 }
+void a(){
+	int n;
+	
+    printf("輸入學生數目(5-10):"); 
+    scanf("%d", &n);
 
+    if (n < 5 || n > 10) {
+        printf("錯誤的學生數目!\n");
+        return;
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("輸入信息學生 %d:\n", i + 1);
+
+        printf("Name: ");
+        scanf("%s", students[studentCount].name);
+        
+        printf("ID (6-digit number): ");
+        scanf("%d", &students[studentCount].id);
+        if (students[studentCount].id < 100000 || students[studentCount].id > 999999) {
+            printf("錯誤ID，回到主選單。\n");
+            return;
+        }
+
+        printf("數學成績(0-100): ");
+        scanf("%d", &students[studentCount].math);
+        if (students[studentCount].math < 0 || students[studentCount].math > 100) {
+            printf("錯誤成績，回到主選單。\n");
+            return;
+        }
+
+        printf("物理成績(0-100): ");
+        scanf("%d", &students[studentCount].physics);
+        if (students[studentCount].physics < 0 || students[studentCount].physics > 100) {
+            printf("錯誤成績，回到主選單。\n");
+            return;
+        }
+
+        printf("英文成績(0-100): ");
+        scanf("%d", &students[studentCount].english);
+        if (students[studentCount].english < 0 || students[studentCount].english > 100) {
+            printf("錯誤成績，回到主選單。\n");
+            return;
+        }
+
+        students[studentCount].average = (students[studentCount].math + students[studentCount].physics + students[studentCount].english) / 3.0;
+        studentCount++;
+    }
+    system("CLS");
+}
+
+void b(){
+	for (int i = 0; i < studentCount; i++) {
+        printf("名子: %s, ID: %d, 數學: %d, 物理: %d, 英文: %d, 平均分數: %.1f\n",
+               students[i].name, students[i].id, students[i].math, students[i].physics,
+               students[i].english, students[i].average);
+    }
+    system("PAUSE");
+    system("CLS");
+}
 
 int main() {
 	printf("||(?ˋ口ˊ)?????       ||O ▽ O)||       ?????('口 '?)||\n");
@@ -91,20 +151,22 @@ int main() {
 		
 	    switch (choice) {		//E1B12_HW4.cpp
 	        case 'a':
-	            //a();
-	            
+	        	system("CLS");
+	            a();
 	            break;
 	        case 'b':
-	            //b();
+	        	system("CLS");
+	            b();
 	            break;
 	        case 'c':
+	        	system("CLS");
 	            //c();
 	            break;
 	        case 'd':
+	        	system("CLS");
 	            //d();
 	            break;
 	        case 'e':
-	        	
 	        	char choice;
 				while(1){
 					printf("確定離開? (y/n): ");
